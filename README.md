@@ -6,18 +6,23 @@ Android app 增量更新
 该app未提供服务端代码（服务端代码的增量更新实现可参考diff.c和patch.c，原理和客户端一致）
 
 ## ScreenShoots ##
-![](http://i.imgur.com/oKn3cZj.jpg)
+![](http://i.imgur.com/nutEUKE.jpg)
 
 ## Android Studio NDK ##
-1. 首先下载NDK![](http://i.imgur.com/r91JpPw.png)
+1. 首先下载NDK  
+![](http://i.imgur.com/VTabP2r.png)
 2. 在项目的<font color="blue">gradle.properties</font>文件下添加<font color="green">android.useDeprecatedNdk=true</font>
 3. 新建含有native方法的类(如 PatchUtil.java)
 4. 编译一下在`app\build\intermediates\classes\debug`目录下对应类的包名下会自动创建出PatchUtil.clasee
 5. 点击Android Studio的Terminal进入`app\build\intermediates\classes\debug`目录下
 6. Android Studio2.0及以上输入`javah -classpath . -jni om.wang.appupdate.util(packName).PatchUtil(ClassName)` 其他版本输入`javah -jni om.wang.appupdate.util(packName).PatchUtil(ClassName)`创建对应的.h文件(在`app\build\intermediates\classes\debug`根目录下)
-7. 新建jni文件夹![](http://i.imgur.com/K0o6P9V.png)创建的.h文件剪切过来。编写对应的c文件(**命名随意**)
-8. 在app的build.gradle配置![](http://i.imgur.com/XdEbtDQ.png)
-9. 运行即可，对应的.so在文件夹![](http://i.imgur.com/cLwLb9J.png)
+7. 新建jni文件夹  
+![](http://i.imgur.com/TwDxie1.png)  
+创建的.h文件剪切过来。编写对应的c文件(**命名随意**)
+8. 在app的build.gradle配置  
+![](http://i.imgur.com/XdEbtDQ.png)
+9. 运行即可，对应的.so在文件夹  
+![](http://i.imgur.com/B7Zulc4.png)
 
 ## API ##
 ### PatchUtil ###
