@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/old_apk_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/old_apk_size_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/old_apk_md5_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/new_apk_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/new_apk_size_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/new_apk_md5_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/patch_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/patch_size_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/new_apk_2_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/holo_blue_light"/>
+
+            <TextView
+                android:id="@+id/new_apk_2_size_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/holo_blue_light"/>
+
+            <TextView
+                android:id="@+id/new_apk_2_md5_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/holo_blue_light"/>
+
+            <TextView
+                android:id="@+id/msg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/get_patch_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorAccent"
+                android:text="获取补丁"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/get_new_apk_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorAccent"
+                android:text="合成APK"
+                android:textColor="@android:color/white"/>
+
+
+            <Button
+                android:id="@+id/delete_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorAccent"
+                android:text="删除合成APK和补丁"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+
+</FrameLayout>
+
+
