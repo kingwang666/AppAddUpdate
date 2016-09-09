@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.MessageDigest;
 
-public class SignUtils {
+public class SignUtil {
 
 
     private static String bytes2Hex(byte[] src) {
@@ -66,7 +66,7 @@ public class SignUtils {
         String fileMd5 = getMd5ByFile(file);
 
         if (BuildConfig.DEBUG) {
-            Log.d("SignUtils", String.format("file's md5=%s, real md5=%s", fileMd5, md5));
+            Log.d("SignUtil", String.format("file's md5=%s, real md5=%s", fileMd5, md5));
         }
 
 

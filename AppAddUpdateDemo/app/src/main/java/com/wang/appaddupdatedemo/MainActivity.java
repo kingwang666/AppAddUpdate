@@ -9,7 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.wang.appupdate.util.PatchUtil;
-import com.wang.appupdate.util.SignUtils;
+import com.wang.appupdate.util.SignUtil;
 
 import java.io.File;
 
@@ -97,11 +97,11 @@ public class MainActivity extends AppCompatActivity {
                 setEnabled(false);
                 mOldApkTV.setText(mOldApk);
                 mOldApkSizeTV.setText(String.format("%.2f M", getFileSize(file)));
-                mOldApkMd5TV.setText(SignUtils.getMd5ByFile(file));
+                mOldApkMd5TV.setText(SignUtil.getMd5ByFile(file));
 
                 mNewApkTV.setText(mNewApk);
                 mNewApkSizeTV.setText(String.format("%.2f M", getFileSize(newFile)));
-                mNewApkMd5TV.setText(SignUtils.getMd5ByFile(newFile));
+                mNewApkMd5TV.setText(SignUtil.getMd5ByFile(newFile));
                 mSubscription = Observable.just("")
                         .map(new Func1<String, Integer>() {
                             @Override
@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                                 if (s.equals("success")) {
                                     mNewApk2TV.setText(mNewApk2);
                                     mNewApk2SizeTV.setText(String.format("%.2f M", getFileSize(newApk2)));
-                                    mNewApk2Md5TV.setText(SignUtils.getMd5ByFile(newApk2));
+                                    mNewApk2Md5TV.setText(SignUtil.getMd5ByFile(newApk2));
                                 }
                             }
                         });

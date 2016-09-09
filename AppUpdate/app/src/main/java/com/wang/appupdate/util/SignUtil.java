@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.MessageDigest;
 
-public class SignUtils {
+public class SignUtil {
 
 
     private static String bytes2Hex(byte[] src) {

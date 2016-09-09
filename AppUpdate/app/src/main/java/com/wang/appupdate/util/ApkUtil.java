@@ -9,10 +9,12 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import com.wang.appupdate.BuildConfig;
+
 import java.util.Iterator;
 import java.util.List;
 
-public class ApkUtils {
+public class ApkUtil {
 
     /**
      * 获取已安装apk的PackageInfo
