@@ -3,7 +3,6 @@ package com.wang.appupdate.util;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.wang.appupdate.BuildConfig;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -65,9 +64,7 @@ public class SignUtil {
 
         String fileMd5 = getMd5ByFile(file);
 
-        if (BuildConfig.DEBUG) {
-            Log.d("SignUtil", String.format("file's md5=%s, real md5=%s", fileMd5, md5));
-        }
+        Log.d("SignUtil", String.format("file's md5=%s, real md5=%s", fileMd5, md5));
 
 
         if (md5.equals(fileMd5)) {
