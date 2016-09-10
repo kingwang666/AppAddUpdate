@@ -74,6 +74,6 @@ Android app 增量更新
 获取已安装Apk文件的源Apk文件
 
 
-- `public static void installApk(Context context, String apkPath)`  
+- `void installApk(Context context, String apkPath)`  
 安装Apk
     

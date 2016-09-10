@@ -31,5 +31,5 @@ dependencies {
     compile 'io.reactivex:rxjava:1.1.10'
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-//    compile 'com.wang.appupdate:appupdate:1.0.0'
+//    compile 'com.wang.appupdate:appupdate:1.0.1'
 }
