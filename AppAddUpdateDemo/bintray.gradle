@@ -1,7 +1,7 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.1"              // 这是库版本部署工件时使用
+version = "1.0.2"              // 这是库版本部署工件时使用
 
 def siteUrl = 'https://github.com/kingwang666/AppAddUpdate'  // 项目的主页
 def gitUrl = 'https://github.com/kingwang666/AppAddUpdate.git' // Git仓库的url

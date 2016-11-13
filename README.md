@@ -8,6 +8,9 @@ Android app 增量更新
 ## ScreenShoots ##
 ![](http://i.imgur.com/nutEUKE.jpg)
 
+## Gradle   
+`compile 'com.wang.appupdate:appupdate:1.0.1'`
+
 ## Android Studio NDK ##
 1. 首先下载NDK  
 ![](http://i.imgur.com/VTabP2r.png)
@@ -75,5 +78,4 @@ Android app 增量更新
 
 
 - `void installApk(Context context, String apkPath)`  
-安装Apk
-    
+安装Apk  

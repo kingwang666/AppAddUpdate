@@ -25,10 +25,17 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                if (PatchUtil.diff(path + "/jiudeng1.apk", path + "/jiudeng2.apk", path + "/test.patch") == 0) {
-                    PatchUtil.patch(path + "/jiudeng1.apk", path + "/jiudeng3.apk", path + "/test.patch");
-                    boolean success = SignUtil.checkMd5(path + "/jiudeng2.apk", SignUtil.getMd5ByFile(new File(path + "/jiudeng3.apk")));
-                    Log.d("MainActivity", success ? "true" : "false");
+//                if (PatchUtil.diff(path + "/jiudeng1.apk", path + "/jiudeng2.apk", path + "/test.patch") == 0) {
+//                    PatchUtil.patch(path + "/jiudeng1.apk", path + "/jiudeng3.apk", path + "/test.patch");
+//                    boolean success = SignUtil.checkMd5(path + "/jiudeng2.apk", SignUtil.getMd5ByFile(new File(path + "/jiudeng3.apk")));
+//                    Log.d("MainActivity", success ? "true" : "false");
+//                }
+                boolean success = ApkUtil.saveApk(new File(ApkUtil.getSourceApkPath(MainActivity.this, "com.wang.giftforbestred")), path + "/gift.apk");
+                if (success){
+                    Log.d("test", "success");
+                }
+                else {
+                    Log.d("test", "error");
                 }
             }
         }).start();

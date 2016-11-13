@@ -1,17 +1,23 @@
 package com.wang.appaddupdatedemo;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wang.appupdate.util.PatchUtil;
 import com.wang.appupdate.util.SignUtil;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String PATH = Environment.getExternalStorageDirectory().getAbsolutePath();
 
+    private static final int REQUEST_PERMISSIONS = 100;
 
     private String mOldApk = PATH + "/jiudeng1.apk";
     private String mNewApk = PATH + "/jiudeng2.apk";
@@ -68,15 +75,46 @@ public class MainActivity extends AppCompatActivity {
 
     private Subscription mSubscription;
 
+    private boolean isSuccess;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        requestPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE);
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        List<String> allPermissions = Arrays.asList(permissions);
+        if (!PermissionUtil.verifyPermissions(allPermissions, grantResults)) {
+            Toast.makeText(this, "权限请求失败", Toast.LENGTH_SHORT).show();
+            isSuccess = false;
+        }
+        else {
+            isSuccess = true;
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    public void requestPermissions(String... permissions) {
+
+        if (PermissionUtil.checkSelfPermission(this, permissions)) {
+            isSuccess = false;
+            ActivityCompat.requestPermissions(this, permissions, 0);
+        }
+        else {
+            isSuccess = true;
+        }
     }
 
     @OnClick({R.id.get_patch_btn, R.id.get_new_apk_btn, R.id.delete_btn})
     public void onClick(View view) {
+        if (!isSuccess){
+            return;
+        }
         switch (view.getId()) {
             case R.id.get_patch_btn:
                 clearText();
