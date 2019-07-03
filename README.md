@@ -1,4 +1,7 @@
 # AppAddUpdate #
+
+[ ![Download](https://api.bintray.com/packages/kingwang666/maven/appupdate/images/download.svg?version=1.0.2) ](https://bintray.com/kingwang666/maven/appupdate/1.0.2/link)
+
 Android app 增量更新 
  
 参考[https://github.com/cundong/SmartAppUpdates](https://github.com/cundong/SmartAppUpdates)  
@@ -9,7 +12,7 @@ Android app 增量更新
 ![](http://i.imgur.com/nutEUKE.jpg)
 
 ## Gradle   
-`compile 'com.wang.appupdate:appupdate:1.0.1'`
+`implementation 'com.wang.appupdate:appupdate:1.0.2'`
 
 ## Android Studio NDK ##
 1. 首先下载NDK  
